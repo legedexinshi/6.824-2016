@@ -1,0 +1,8 @@
+some tricks:
+1. be careful to use mutex when accessing members of raft server
+2. whenever a RPC call returns, check whether to continue or not
+3. make timeout random to avoid race
+4. be careful to update votedFor 
+5. when leader come to power, make it as soon as possible to find the right nextIndex
+6. whenever a leader's term is updated by others, turn it to follower
+7. good luck & have fun!
