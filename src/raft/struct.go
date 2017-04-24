@@ -25,6 +25,9 @@ type Raft struct {
 	matchIndex		[]int
 	killed			bool
 
+	lastIncludedIndex  	int
+	lastIncludedTerm 	int
+
 }
 
 //
@@ -59,6 +62,17 @@ type RequestVoteReply struct {
 	VoteGranted 	int
 }
 
+type SnapshotArgs struct {
+	Term 	int
+	LeaderId 	int
+	LastIncludedIndex 	int
+	LastIncludedTerm 	int
+	Snapshot  []byte
+}
+type SnapshotReply struct {
+	Term 	int
+}
+
 type AppendArgs struct {
 	Term 		int
 	LeaderId 	int
@@ -76,5 +90,6 @@ type AppendReply struct {
 
 type LogEntry struct {
 	Term 		int
+	Index 		int
 	Command 	interface{}
 }

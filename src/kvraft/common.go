@@ -10,6 +10,7 @@ type Err string
 // Put or Append
 type PutAppendArgs struct {
 	// You'll have to add definitions here.
+	SeqNum 	int
 	Key   string
 	Value string
 	Op    string // "Put" or "Append"
@@ -24,6 +25,7 @@ type PutAppendReply struct {
 }
 
 type GetArgs struct {
+	SeqNum 	int
 	Key string
 	// You'll have to add definitions here.
 }

@@ -412,7 +412,6 @@ func TestSnapshotRPC(t *testing.T) {
 
 	ck.Put("a", "A")
 	check(t, ck, "a", "A")
-
 	// a bunch of puts into the majority partition.
 	cfg.partition([]int{0, 1}, []int{2})
 	{
